@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Steam Achievments</h1>
+
+<ul>
+{% for a in game_data %}
+    <li>
+        {{ a["displayName"] }} - 
+
+        {% if player_data[a["name"]]["achieved"] == 1 %}
+            {{ moment(player_data[a["name"]]["unlocktime"]).format("LL") }}
+        {% else %}
+            Inte ännu.
+        {% endif %}
+    </li>
+{% endfor %}
+</ul>
+
+{% endblock %}  

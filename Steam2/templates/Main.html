@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Steam Achievments</h1>
+<form method="POST" action="/">
+    {{ form.hidden_tag() }}
+
+    <input type="submit" value="Go">
+</form>
+{% endblock %}

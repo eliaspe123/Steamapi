@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>QR</title>
+    <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Raleway&display=swap" rel="stylesheet"> 
+    
+    {% block scripts %}
+        {{ moment.include_moment() }}
+        {{ moment.lang('sv') }}
+    {% endblock %}
+</head>
+<body>
+<div class="container">    
+    {% block content %}{% endblock %}
+</div>
+</body>
+</html>

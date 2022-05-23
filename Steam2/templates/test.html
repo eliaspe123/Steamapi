@@ -1,19 +1,28 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Steam Achievments</h1>
-
+<link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
+<h1>Steam achievements</h1>
+<div> </div>
 <ul>
 {% for a in game_data %}
+<div class="main">   
     <li>
-        {{ a["displayName"] }} - 
-
+        <img src="{{ a['icon'] }}" alt="Achievement icon.">
+       {{ a["displayName"] }}  |
+       
+   
         {% if player_data[a["name"]]["achieved"] == 1 %}
-            {{ moment(player_data[a["name"]]["unlocktime"]).format("LL") }}
+          Achieved  {{ moment(player_data[a["name"]]["unlocktime"]).format("LL") }}  
         {% else %}
             Inte ännu.
         {% endif %}
+         |
+        {{a["description"]}}
+  
+        </div>
     </li>
+
 {% endfor %}
 </ul>
 

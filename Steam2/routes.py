@@ -5,24 +5,14 @@ import requests
 import pendulum
 
 
-@app.route('/', methods= ["Get", "Post"])
-def index():
-    form = Intform()
 
-    if form.validate_on_submit():
-        GameID = form.id.data
-
-  
-        return render_template('Main.html', form=form)
-
-    return render_template('Main.html', form=form)
 
 
 def fetch_from_api():
     pass
 
 
-@app.route('/test')
+@app.route("/")
 def test():
 
     # https://api.steampowered.com/ISteamUserStats/GetSchemaForGame/v2/
